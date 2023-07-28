@@ -3,18 +3,19 @@
  const router = express.Router();
 
 
- router.get('/users/all', async (req, res) => {
+router.get('/users/all', async (req, res) => {
     const allusers = await getUsers()
-    res.json ( allusers)
-  })
+    console.log('allusers', allusers);
+    res.json (allusers)
+})
 
-  router.put('/users/update/:_id', async (request, response) => {
-    const id = request.params
-    const userUpdate = request.body
-    console.log(id);
-    console.log(userUpdate);
-    const updateData = await  updateUsers(id, userUpdate)
-    response.json(updateData)
+router.put('/users/update/:_id', async (request, response) => {
+  const id = request.params
+  const userUpdate = request.body
+  console.log(id);
+  console.log(userUpdate);
+  const updateData = await  updateUsers(id, userUpdate)
+  response.json(updateData)
 });
 
 router.delete('/users/delete/:_id', async (request, response) => {

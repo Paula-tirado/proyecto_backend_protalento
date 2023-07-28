@@ -1,16 +1,17 @@
 const mongoose = require ('mongoose');
-const schema = new mongoose.Schema(    
+const Schema = new mongoose.Schema(    
 
     {   role:String,
         email:String,
         password:String
     }   
 )
-const Role = mongoose.model('roll', schema);
+const Role = mongoose.model('roll', Schema);
 
 
 const getRole = async () =>{
-    return await Role.find()
+    console.log('paseeeee modeloooooo');
+    return await Role.find();
 };
 
 module.exports = {

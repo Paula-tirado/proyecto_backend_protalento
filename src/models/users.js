@@ -17,6 +17,7 @@ const Users = mongoose.model('user', schema);
 
 
 const getUsers = async () =>{
+    console.log('paseeeee');
     return await Users.find()
 };
 
